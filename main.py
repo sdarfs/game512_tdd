@@ -13,3 +13,13 @@ def zero_in_mas(mas):
         if 0 in row:
             return True
     return False
+
+
+def empty_list(mas):
+    list = []
+    for i in range(4):
+        for j in range(4):
+            if mas[i][j] == 0:
+                num = get_number_from_index(i, j)
+                list.append(num)
+    return list
