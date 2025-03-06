@@ -88,3 +88,7 @@ def to_the_down(mas):
         for i in range(4):
             mas[i][j] = column[i]
     return mas
+
+def print_arr(mas):
+    for row in mas:
+        print(*row)
