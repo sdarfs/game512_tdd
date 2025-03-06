@@ -1,3 +1,6 @@
+import random
+
+
 def get_number_from_index(i, j):
     return i * 4 + j + 1
 
@@ -54,6 +57,7 @@ def to_the_right(mas):
                     mas[i].insert(0, 0)
     return mas
 
+
 def to_the_up(mas):
     for j in range(4):
         column = []
@@ -78,17 +82,26 @@ def to_the_down(mas):
         for i in range(4):
             if mas[i][j] != 0:
                 column.append(mas[i][j])
-        while(len(column)) != 4:
+        while (len(column)) != 4:
             column.insert(0, 0)
         for i in range(3, 0, -1):
-            if column[i] == column[i-1] and column[i] != 0:
+            if column[i] == column[i - 1] and column[i] != 0:
                 column[i] *= 2
-                column.pop(i-1)
+                column.pop(i - 1)
                 column.insert(0, 0)
         for i in range(4):
             mas[i][j] = column[i]
     return mas
 
+
 def print_arr(mas):
     for row in mas:
         print(*row)
+
+
+def rand(mas, x, y):
+    if random.random() <= 0.75:
+        mas[x][y] = 2
+    else:
+        mas[x][y] = 4
+    return mas
