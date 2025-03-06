@@ -103,3 +103,33 @@ class Test_game512(unittest.TestCase):
         ]
 
         self.assertEqual(to_the_left(mas), rez_mas)
+
+    def test_move_right_1(self):
+        mas = [[2, 2, 0, 0],
+               [4, 4, 0, 0],
+               [2, 0, 2, 2],
+               [0, 0, 0, 0]]
+
+        rez_mas = [[0, 0, 0, 4],
+                   [0, 0, 0, 8],
+                   [0, 0, 2, 4],
+                   [0, 0, 0, 0]]
+
+        self.assertEqual(to_the_right(mas), rez_mas)
+
+    def test_move_right_2(self):
+        mas = [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        rez_mas = [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]
+
+        self.assertEqual(to_the_right(mas), rez_mas)
